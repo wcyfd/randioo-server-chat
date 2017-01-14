@@ -1,0 +1,21 @@
+package com.randioo.randioo_chat_server.protocol;
+import "Login.proto";
+import "Ping.proto";
+import "Chat.proto";
+
+//11
+message SCMessage{
+	optional LoginCheckAccountResponse loginCheckAccountResponse=1;
+	optional LoginCreateRoleResponse loginCreateRoleResponse=2;
+	optional LoginGetRoleDataResponse loginGetRoleDataResponse=3;
+
+	optional PingResponse pingResponse=4;
+	
+	optional ChatEnterChatRoomResponse chatEnterChatRoomResponse = 5;
+	optional ChatSendChatResponse chatSendChatResponse = 6;
+	optional ChatExitChatRoomResponse chatExitChatRoomResponse=7;
+	optional ChatSendPrivateChatResponse chatSendPrivateChatResponse = 8;
+	optional ChatShowAccountChatResponse chatShowAccountChatResponse = 9;
+	optional ChatShowSummaryResponse chatShowSummaryResponse = 10;
+	optional SCChatReceiveChat scChatReceiveChat = 11;
+}

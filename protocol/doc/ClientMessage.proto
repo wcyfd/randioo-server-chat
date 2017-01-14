@@ -1,0 +1,21 @@
+package com.randioo.randioo_chat_server.protocol;
+import "Login.proto";
+import "Ping.proto";
+import "Chat.proto";
+
+//10
+message CSMessage{
+	optional LoginCheckAccountRequest loginCheckAccountRequest=1;
+	optional LoginCreateRoleRequest loginCreateRoleRequest=2;
+	optional LoginGetRoleDataRequest loginGetRoleDataRequest=3;
+	
+	optional PingRequest pingRequest = 4;	
+	
+	optional ChatEnterChatRoomRequest chatEnterChatRoomRequest = 5;
+	optional ChatSendChatRequest chatSendChatRequest = 6;
+	optional ChatExitChatRoomRequest chatExitChatRoomRequest = 7;
+	optional ChatSendPrivateChatRequest chatSendPrivateChatRequest = 8;
+	optional ChatShowAccountChatRequest chatShowAccountChatRequest = 9;
+	optional ChatShowSummaryRequest chatShowSummaryRequest = 10;
+	
+}

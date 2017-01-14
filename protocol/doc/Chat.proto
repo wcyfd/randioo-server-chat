@@ -1,0 +1,74 @@
+package com.randioo.randioo_chat_server.protocol;
+
+/**进入房间*/
+message ChatEnterChatRoomRequest{
+	optional string roomId = 1;
+}
+
+message ChatEnterChatRoomResponse{
+	
+}
+
+/**发送聊天信息*/
+message ChatSendChatRequest{
+	optional string roomId = 1;
+	optional string context = 2;
+}
+
+message ChatSendChatResponse{
+	
+}
+
+/**聊天信息*/
+message ChatInfo{
+	optional string account = 1;
+	optional string name = 2;
+	optional string context = 3;
+	optional int32 time = 4;
+}
+
+/**接收到聊天信息*/
+message SCChatReceiveChat{
+	optional ChatInfo chatInfo = 1;
+}
+
+/**退出房间*/
+message ChatExitChatRoomRequest{
+	optional string roomId = 1;
+}
+
+message ChatExitChatRoomResponse{
+	
+}
+
+/**发送私人聊天信息*/
+message ChatSendPrivateChatRequest{
+	optional string account = 1;
+	optional string context = 2;
+}
+
+message ChatSendPrivateChatResponse{
+	
+}
+/**显示某玩家的聊天信息*/
+message ChatShowAccountChatRequest{
+	optional string account = 1;
+}
+
+message ChatShowAccountChatResponse{
+	repeated ChatInfo chatInfos = 1;
+}
+
+/**显示聊天概况*/
+message ChatShowSummaryRequest{
+}
+
+message ChatShowSummaryResponse{
+	repeated ChatSummaryInfo chatSummaryInfos = 1;	
+}
+
+message ChatSummaryInfo{
+	optional string account = 1;
+	optional int32 chatInfoCount = 2;
+}
+

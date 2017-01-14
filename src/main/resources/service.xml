@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd 
+    http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd 
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<bean id="loginService" class="com.randioo.randioo_chat_server.module.login.service.LoginServiceImpl">
+		<property name="roleDao" ref="roleDao"></property>
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean id="pingService" class="com.randioo.randioo_chat_server.module.ping.service.PingServiceImpl">
+	</bean>
+	<bean id="chatService" class="com.randioo.randioo_chat_server.module.chat.service.ChatServiceImpl">
+		<property name="roleService" ref="roleService"></property>
+		<property name="chatModelService" ref="chatModelService"></property>
+	</bean>
+	<bean id="roleService" class="com.randioo.randioo_chat_server.module.role.service.RoleServiceImpl">
+		<property name="roleDao" ref="roleDao"></property>
+		<property name="loginService" ref="loginService"></property>
+	</bean>
+</beans>

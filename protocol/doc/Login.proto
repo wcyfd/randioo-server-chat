@@ -1,0 +1,38 @@
+package com.randioo.randioo_chat_server.protocol;
+
+//用户登录检查
+message LoginCheckAccountRequest{
+	optional string account = 1;
+}
+
+message LoginCheckAccountResponse{
+	optional int32 errorCode=1;
+}
+
+//创建玩家
+message LoginCreateRoleRequest{
+	optional string account=1;
+	optional string name=2;
+}
+
+message LoginCreateRoleResponse{
+	optional int32 errorCode=1;
+}
+
+//获得玩家信息
+message LoginGetRoleDataRequest{
+	optional string account=1;
+}
+
+message LoginGetRoleDataResponse{
+	optional int32 errorCode=1;
+	optional int32 serverTime = 2;
+	optional RoleData roleData = 3;
+}
+
+//玩家信息
+message RoleData{
+	optional int32 roleId = 1;
+	optional string name=2;
+	optional string account = 3;
+}
